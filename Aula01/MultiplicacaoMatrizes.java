@@ -30,5 +30,28 @@ public class MultiplicacaoMatrizes{
         }
 
         scan.close();  
+
+        // Processamento 
+
+        // Linhas 
+        for (int i = 0; i < Resultado.length; i ++ ){ 
+            
+            // Colunas 
+            for (int j = 0; j < Resultado.length; j ++){ 
+                
+                // Quantidade de somas 
+                for (int k = 0; k < Matriz02.length; k ++){ 
+                    Resultado[i][j] += (Matriz01[i][k] * Matriz02[k][j]); 
+                }
+                
+            }
+        }
+
+        // Imprimindo Resultado 
+        for (int i = 0; i < Resultado.length; i ++){ 
+            for (int j = 0; j < Resultado.length; j ++){ 
+                System.out.print(Resultado[i][j] + "\t"); 
+            }
+        }
     }
 }
