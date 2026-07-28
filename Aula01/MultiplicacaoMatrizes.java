@@ -12,6 +12,7 @@ public class MultiplicacaoMatrizes{
         int Resultado[][] = new int[2][2];
 
         // Entrada de dados da Matriz 01 
+        System.out.println("\n --- MATRIZ 01 ---");
         for (int i = 0; i < Matriz01.length; i ++ ){ 
             for (int j = 0; j < Matriz01[i].length; j ++){ 
                 System.out.print("Matriz 01[" + i + "][" + j + "]:"); 
@@ -21,6 +22,7 @@ public class MultiplicacaoMatrizes{
         }
 
         // Entrada de dados da Matriz 02 
+        System.out.println("\n --- MATRIZ 02 ---");
         for (int i = 0; i < Matriz02.length; i ++ ){ 
             for (int j = 0; j < Matriz02[i].length; j ++){ 
                 System.out.print("Matriz 02[" + i + "][" + j + "]:"); 
@@ -48,6 +50,7 @@ public class MultiplicacaoMatrizes{
         }
 
         // Imprimindo Resultado 
+        System.out.println("\n --- RESULTADO ---");
         for (int i = 0; i < Resultado.length; i ++){ 
             for (int j = 0; j < Resultado.length; j ++){ 
                 System.out.print(Resultado[i][j] + "\t"); 
