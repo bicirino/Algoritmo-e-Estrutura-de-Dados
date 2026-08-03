@@ -24,7 +24,7 @@ public class BuscaBinaria{
                 break;
             }
 
-            // CORREÇÃO: As variáveis de controle precisam ser resetadas a CADA nova pesquisa
+            // As variáveis de controle precisam ser resetadas a CADA nova pesquisa
             int inicio = 0; 
             int fim = (vetor.length - 1); 
             int meio = ((inicio + fim) / 2); 
@@ -35,7 +35,7 @@ public class BuscaBinaria{
                 contador++; 
                 
                 if (parametro_pesquisa == vetor[meio]) {
-                    // CORREÇÃO: Usar a variável 'meio' em vez de 'i'
+                    
                     System.out.println("Elemento encontrado na posição: " + meio + " depois de " + contador + " tentativas."); 
                     encontrado = true;
                     break; 
