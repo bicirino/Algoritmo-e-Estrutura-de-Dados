@@ -26,6 +26,7 @@ public class Desafio03{
     static class Cliente{ 
         String nome; 
         int idade;  
+        boolean prioridade = false; 
     }
     
     public static void main(String[] args){ 
@@ -42,7 +43,10 @@ public class Desafio03{
         // Crio o vetor para armazenar os clientes 
         Cliente clientes[] = new Cliente[n];   
 
+        // --- REGISTRANDO CLIENTES --- 
         for (int i = 0; i < n; i++){ 
+
+            System.out.println(); 
 
             clientes[i] = new Cliente(); 
             
@@ -51,8 +55,14 @@ public class Desafio03{
 
             System.out.print("\n\t Digite a idade do " + (i + 1) + " cliente: "); 
             clientes[i].idade = scan.nextInt(); 
+
+            if (clientes[i].idade >= 60){ 
+                clientes[i].prioridade = true; 
+            }
             
         }
+        
+        
 
 
     }
