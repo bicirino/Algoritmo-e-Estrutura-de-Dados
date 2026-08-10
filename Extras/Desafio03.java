@@ -37,6 +37,56 @@ public class Desafio03{
         // Tamanho do vetor 
         int n; 
 
+        
+
+        System.out.println("Selecione a ação desejada: ");
+        
+        System.out.println("\n\t 1 - Registrar usuários");
+        System.out.println("\n\t 2 - Listar usuários");
+        System.out.println("\n\t 3 - Excluir usuário");
+        System.out.println("\n\t 0 - Sair");
+        System.out.println("\n\n\t -> ");
+
+        int escolha = scan.nextInt(); 
+
+        do  { 
+
+            switch (escolha){ 
+            case 1: 
+
+            
+
+                break; 
+
+
+
+            case 2: 
+
+                break; 
+
+            
+            case 3: 
+
+                break; 
+
+            default: 
+                
+                System.out.println("Ação não encontrada!");  
+                break; 
+        }
+        
+        
+        
+        
+        
+        
+        } while (escolha != 0)
+       
+       
+
+
+
+
         System.out.print("Digite a quantidade de clientes a serem armazenados: "); 
         n = scan.nextInt(); 
 
@@ -64,6 +114,6 @@ public class Desafio03{
         
         
 
-
+        scan.close(); 
     }
 }
