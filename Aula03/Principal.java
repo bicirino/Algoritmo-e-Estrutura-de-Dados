@@ -1,4 +1,24 @@
-import java.util.Scanner; 
+import java.util.*; 
+
+
+
+class Lista { 
+    private ArrayList<Integer> elementos = new ArrayList<>(); 
+
+    public void inserir (int valor){ 
+        elementos.add(valor); 
+    }
+
+    public void excluir(int valor){ 
+        elementos.remove(Integer.valueOf(valor)); 
+    }
+
+    public void imprimir(){ 
+        System.out.println(elementos); 
+    }
+}
+
+
 
 public class Principal{ 
 
@@ -13,7 +33,7 @@ public class Principal{
 
         while(opcao != 5){ 
 
-            System.out.println("========================"); 
+            System.out.println("\n========================"); 
             System.out.println("MENU DE OPÇÕES"); 
             System.out.println("========================"); 
             System.out.println("1 - Inserir"); 
@@ -22,7 +42,7 @@ public class Principal{
             System.out.println("4 - Um milhão"); 
             System.out.println("5 - Sair"); 
 
-            System.out.print("Digite sua opção: "); 
+            System.out.print("\nDigite sua opção: "); 
             opcao = scan.nextInt(); 
 
 
@@ -35,7 +55,7 @@ public class Principal{
             } else if (opcao == 3){ 
                 objLista.imprimir(); 
             } else if (opcao == 4 ){ 
-                for (int i = 0; i < 1000000; i++){ 
+                for (int i = 0; i < 1000001; i++){ 
                     objLista.inserir(i); 
                 }
             }
