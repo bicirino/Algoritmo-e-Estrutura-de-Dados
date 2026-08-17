@@ -31,6 +31,7 @@ public class Principal{
                 objLista.inserir (scan.nextInt()); 
             } else if (opcao == 2){ 
                 System.out.print("Digite um número para excluir: "); 
+                objLista.excluir(scan.nextInt()); 
             } else if (opcao == 3){ 
                 objLista.imprimir(); 
             } else if (opcao == 4 ){ 
