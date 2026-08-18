@@ -20,100 +20,79 @@
 import java.util.*; 
 import java.time.LocalDateTime; 
 
-public class Desafio03{ 
-    
-    
-    static class Cliente{ 
-        String nome; 
-        int idade;  
-        boolean prioridade = false; 
+// --- CRIAÇÃO DE CLASSES E FUNÇÕES --- 
+class Cliente {
+
+    String nome;  
+    int idade;
+
+    public Cliente (String nome, int idade ){ 
+        this.nome = nome; 
+        this.idade = idade; 
     }
-    
-    public static void main(String[] args){ 
 
-        Scanner scan = new Scanner(System.in); 
+}
 
-        
-        // Tamanho do vetor 
-        int n; 
+class Fila { 
 
-        
+    // Declaração do Array das duas filas: Normal e preferencial 
+    private ArrayList<Cliente> preferencial = new ArrayList<>(); 
+    private ArrayList<Cliente> normal = new ArrayList<>(); 
 
-        System.out.println("Selecione a ação desejada: ");
-        
-        System.out.println("\n\t 1 - Registrar usuários");
-        System.out.println("\n\t 2 - Listar usuários");
-        System.out.println("\n\t 3 - Excluir usuário");
-        System.out.println("\n\t 0 - Sair");
-        System.out.println("\n\n\t -> ");
+    // Uma outra lista para guardar o histórico de registros 
+    private ArrayList<Cliente> historico = new ArrayList<>(); 
 
-        int escolha = scan.nextInt(); 
-
-        do  { 
-
-            switch (escolha){ 
-            case 1: 
-
-            
-
-                break; 
-
-
-
-            case 2: 
-
-                break; 
-
-            
-            case 3: 
-
-                break; 
-
-            default: 
-                
-                System.out.println("Ação não encontrada!");  
-                break; 
+    // Métodos (funções)
+    public void cadastrar(Cliente cliente){ 
+        // Cadastra o cliente na fila correta com base na idade 
+        if (cliente.idade >= 60 ){ 
+            preferencial.add(cliente); 
+        } else { 
+            normal.add(cliente); 
         }
-        
-        
-        
-        
-        
-        
-        } while (escolha != 0)
-       
-       
 
+        // Não importa a idade, todo cliente passa pelo histórico 
+        historico.add(cliente); 
 
+        System.out.println("Cliente: " + cliente.nome + "cadastrado!"); 
+    }
 
+    public void remover(String nomeCompleto){ 
 
-        System.out.print("Digite a quantidade de clientes a serem armazenados: "); 
-        n = scan.nextInt(); 
-
-        // Crio o vetor para armazenar os clientes 
-        Cliente clientes[] = new Cliente[n];   
-
-        // --- REGISTRANDO CLIENTES --- 
-        for (int i = 0; i < n; i++){ 
-
-            System.out.println(); 
-
-            clientes[i] = new Cliente(); 
+        for (int i = 0; i < preferencial.size; i++){ 
             
-            System.out.print("\n\t Digite o nome do " + (i + 1 )+ " cliente: "); 
-            clientes[i].nome = scan.next(); 
+            if (preferencial.get(i).nome.equalsIgnoreCase(nomeCompleto)){ 
+                preferencial.remove(i); 
 
-            System.out.print("\n\t Digite a idade do " + (i + 1) + " cliente: "); 
-            clientes[i].idade = scan.nextInt(); 
+                System.out.println("Cliente: " + nomeCompleto + "removido com sucesso!"); 
 
-            if (clientes[i].idade >= 60){ 
-                clientes[i].prioridade = true; 
+                return; 
             }
-            
-        }
-        
-        
 
-        scan.close(); 
+        }
+
+        for (int i = 0; i < normal.size; i++){ 
+            
+            if (normal.get(i).nome.equalsIgnoreCase(nomeCompleto)){ 
+                normal.remove(i); 
+
+                System.out.println("Cliente: " + nomeCompleto + "removido com sucesso!"); 
+
+                return; 
+            }
+        }
+
+        System.out.println("Cliente não encontrado! "); 
+        
     }
+
+}
+
+
+public class Desafio03{ 
+
+    Scanner scan = new Scanner(System.in); 
+
+
+
 }
