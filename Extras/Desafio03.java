@@ -104,6 +104,8 @@ class Fila {
             System.out.println("\t\n -> " + c.nome + "-" + c.idade + "anos"); 
         }
 
+        System.out.println(); 
+
 }
 
 
