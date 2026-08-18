@@ -16,11 +16,10 @@
 */
 
 
-// --- IMPORTAÇÃO DE BIBLIOTECAS --- 
 import java.util.*; 
 import java.time.LocalDateTime; 
 
-// --- CRIAÇÃO DE CLASSES E FUNÇÕES --- 
+ 
 class Cliente {
 
     String nome;  
@@ -35,31 +34,34 @@ class Cliente {
 
 class Fila { 
 
-    // Declaração do Array das duas filas: Normal e preferencial 
+    
     private ArrayList<Cliente> preferencial = new ArrayList<>(); 
     private ArrayList<Cliente> normal = new ArrayList<>(); 
 
-    // Uma outra lista para guardar o histórico de registros 
+    
     private ArrayList<Cliente> historico = new ArrayList<>(); 
 
-    // Métodos (funções)
+    
     public void cadastrar(Cliente cliente){ 
-        // Cadastra o cliente na fila correta com base na idade 
+        
         if (cliente.idade >= 60 ){ 
             preferencial.add(cliente); 
         } else { 
             normal.add(cliente); 
         }
 
-        // Não importa a idade, todo cliente passa pelo histórico 
+        
         historico.add(cliente); 
 
         System.out.println("Cliente: " + cliente.nome + "cadastrado!"); 
     }
 
+    
     public void remover(String nomeCompleto){ 
 
+        
         for (int i = 0; i < preferencial.size; i++){ 
+            
             
             if (preferencial.get(i).nome.equalsIgnoreCase(nomeCompleto)){ 
                 preferencial.remove(i); 
@@ -71,13 +73,15 @@ class Fila {
 
         }
 
+        l 
         for (int i = 0; i < normal.size; i++){ 
+
             
             if (normal.get(i).nome.equalsIgnoreCase(nomeCompleto)){ 
                 normal.remove(i); 
 
                 System.out.println("Cliente: " + nomeCompleto + "removido com sucesso!"); 
-
+                
                 return; 
             }
         }
@@ -85,6 +89,20 @@ class Fila {
         System.out.println("Cliente não encontrado! "); 
         
     }
+
+    public void listar(){ 
+        
+        System.out.println("======== FILA PREFERENCIAL ======== "); 
+
+        for (Cliente c: preferencial){ 
+            System.out.println("\t\n -> " + c.nome + "-" + c.idade + "anos"); 
+        }
+
+        System.out.println("======== FILA NORMAL ======== "); 
+
+        for (Cliente c: normal){ 
+            System.out.println("\t\n -> " + c.nome + "-" + c.idade + "anos"); 
+        }
 
 }
 
