@@ -17,5 +17,7 @@ public class PreenchimentoVetor {
         for (int j = 0; j < Vetor.length; j++){ 
             System.out.println(Vetor[j]); 
         }
+
+        scan.close(); 
     }
 }
