@@ -13,7 +13,7 @@ public class Desafio02{
         // --- DECLARAÇÃO DE VARIÁVEIS --- 
         Scanner scan = new Scanner(System.in); 
         String palavra;
-        String palavra_invertida; 
+        String palavra_invertida = ""; 
 
         System.out.println("Digite a palavra a ser analisada"); 
         System.out.print("/t-> ");
